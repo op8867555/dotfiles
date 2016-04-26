@@ -19,6 +19,7 @@ Plug 'congma/vim-fakeclip'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'int3/vim-extradite'
 
 " Bars, panels, and files
@@ -48,6 +49,13 @@ Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+
+" Pandoc
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+
+Plug 'vim-scripts/VOoM'
 
 call plug#end()
 
@@ -280,12 +288,15 @@ let g:ghcmod_hlint_options = ['--ignore=Reduce duplication']
 
 "}}}
 
-
 " Airline {{{
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 " }}}
 
+" Pandoc {{{
+" add CJK to spell langs
+let g:pandoc#spell#default_langs=['en_us', 'cjk']
+" }}}
 
 " Alignment {{{
 
