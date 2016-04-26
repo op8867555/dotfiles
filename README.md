@@ -2,6 +2,6 @@
 
 My dot-files
 
-[ ] .vimrc
+[x] .vimrc
 [ ] .tmux.conf
 [ ] awesome wm settings
