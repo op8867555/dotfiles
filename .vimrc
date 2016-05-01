@@ -17,6 +17,8 @@ Plug 'Shougo/neocomplete.vim'
 
 Plug 'congma/vim-fakeclip'
 
+Plug 'editorconfig/editorconfig-vim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
