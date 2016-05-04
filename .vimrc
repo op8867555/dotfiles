@@ -3,6 +3,7 @@
 "     * stack
 "     * ghc-mod
 "     * stylish-haskell
+"     * hasktags
 "     * par
 " reference:
 "     * https://github.com/begriffs/haskell-vim-now
@@ -16,6 +17,8 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/neocomplete.vim'
 
 Plug 'congma/vim-fakeclip'
+
+Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -35,9 +38,12 @@ Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
 
 " Theme
 Plug 'vim-scripts/tir_black'
+
+Plug 'scrooloose/syntastic'
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -217,7 +223,7 @@ inoremap <expr> <C-u> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 autocmd FileType python setlocal ts=4 sts=4 sw=4 ex
 "let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#completions_command = "<C-N>"
-
+let g:syntastic_python_checkers = ['flake8']
 " }}}
 
 " Ruby {{{
