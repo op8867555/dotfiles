@@ -17,7 +17,7 @@ URxvt*letterspace: 4
 URxvt.perl-ext-common: resize-font
 URxvt.reverseVideo: on
 
-# urxvt-resize-font-git
+! urxvt-resize-font-git
 URxvt.resize-font.smaller: C-minus
 URxvt.resize-font.bigger: C-equal
 URxvt.resize-font.reset: C-plus
