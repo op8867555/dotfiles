@@ -1,0 +1,40 @@
+XTerm*locale: true
+XTerm*reverseVideo: on
+xterm*faceName: Source Code Pro
+xterm*faceNameDoublesize: Source Han Sans
+XTerm*metaSendsEscape: true
+xterm*termName: xterm-256color
+xterm*faceSize: 12
+
+URxvt.scrollBar: false
+URxvt*font:  xft:Source Code Pro:size=12, \
+             xft:DejaVu Sans Mono:size=12, \
+             xft:Source Han Sans:style=Normal:size=12, \
+             xft:Symbola:pixelsize=12:antialias=true:hinting=slight, \
+             xfg:Awesome, \
+             xft:unifont:style=Medium
+URxvt*letterspace: 4
+URxvt.perl-ext-common: resize-font
+URxvt.reverseVideo: on
+
+# urxvt-resize-font-git
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-equal
+URxvt.resize-font.reset: C-plus
+URxvt.resize-font.show: C-question
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
+! Color scheme for urgent row
+rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
+! Color scheme for active row
+rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
+! Color scheme window
+rofi.color-window:                   #ffffff,#f5f5f5
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
