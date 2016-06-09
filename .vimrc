@@ -15,6 +15,7 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/neocomplete.vim'
+Plug 'jgdavey/tslime.vim'
 
 Plug 'congma/vim-fakeclip'
 
@@ -62,6 +63,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 
 
 Plug 'vim-scripts/VOoM'
+
+Plug 'tmhedberg/matchit'
 
 call plug#end()
 
@@ -143,6 +146,17 @@ nmap <silent> <leader>u :MundoToggle<CR>
 
 " don't close buffers when you aren't displaying them
 set hidden
+
+" tslime {{{
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
+
+" }}}
+
 
 " ctrlp {{{
 
