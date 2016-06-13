@@ -27,7 +27,7 @@ font pango:Source Code Pro, Awesome 10
 # font, it doesn’t scale on retina/hidpi displays.
 
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id ~/bin/i3sub.py
+exec_always --no-startup-id ~/bin/i3sub.py
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -52,7 +52,7 @@ bindsym $mod+Shift+t exec i3-input -F 'title_format %s' -P 'New Title: '
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Control+d exec --no-startup-id i3-dmenu-desktop -dmenu 'rofi -dmenu'
 
 # change focus
 bindsym $mod+h focus left
@@ -103,6 +103,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 bindsym $mod+d focus child
+
+# focus urgent window
+bindsym $mod+x [urgent=latest] focus
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -155,14 +158,22 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-for_window [title="Messenger.*- Chromium"] move window to workspace 4
-for_window [title=".* - Gitter - Chromium"] move window to workspace 4
-for_window [title=".*Google Hangouts.* - Chromium"] move window to workspace 4
-for_window [title=".*Skype.* - Chromium"] move window to workspace 4
-for_window [title=".*Habitica.* - Chromium"] move window to workspace 4
-for_window [title=".*Inbox.* - Chromium"] move window to workspace 4
-# for_window [title=".*| freenode - Chromium"] move window to workspace 4
-for_window [title="^LINE$"] move window to workspace 4
+# for_window [title="Messenger.*- Chromium"] move window to workspace 4
+# for_window [title=".* - Gitter - Chromium"] move window to workspace 4
+# for_window [title=".*Google Hangouts.* - Chromium"] move window to workspace 4
+# for_window [title=".*Skype.* - Chromium"] move window to workspace 4
+# for_window [title=".*Habitica.* - Chromium"] move window to workspace 4
+# for_window [title=".*Inbox.* - Chromium"] move window to workspace 4
+# # for_window [title=".*| freenode - Chromium"] move window to workspace 4
+# for_window [title="^LINE$"] move window to workspace 4
+
+assign [title="Messenger.*- Chromium"] 4
+assign [title=".* - Gitter - Chromium"] 4
+assign [title=".*Google Hangouts.* - Chromium"] 4
+assign [title=".*Skype.* - Chromium"] 4
+assign [title=".*Habitica.* - Chromium"] 4
+assign [title=".*Inbox.* - Chromium"] 4
+assign [title="^LINE$"] 4
 
 for_window [instance="^crx_knipolnnllmklapflnccelgolnpehhpl$"] move window to workspace 4, floating disable
 for_window [title="^Tab Organizer \(.+\)$"] floating enable
