@@ -286,7 +286,7 @@ mode "screen" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $mod+Print mode "screen"
+bindsym --release $mod+Print mode "screen"
 
 mode "move" {
   bindsym $mod+h move container to output left, focus output left
@@ -312,6 +312,7 @@ bar {
         # status_command i3status
         status_command SCRIPT_DIR=~/bin/i3blocks/ i3blocks
         tray_output primary
+        strip_workspace_numbers yes
 }
 
 
