@@ -96,10 +96,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec rofi -no-kb-row-select -show run
 bindsym $mod+Shift+w exec rofi -no-kb-row-select -show window
 bindsym $mod+Shift+t exec i3-input -F 'title_format %s' -P 'New Title: '
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+Control+d exec --no-startup-id i3-dmenu-desktop -dmenu 'rofi -dmenu'
+bindsym $mod+Control+d exec rofi -no-kb-row-select -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -133,6 +130,8 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+# make window sticky
+bindsym $mod+Shift+f sticky toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
