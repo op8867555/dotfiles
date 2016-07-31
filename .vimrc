@@ -44,6 +44,7 @@ Plug 'tpope/vim-abolish'
 
 " Theme
 Plug 'vim-scripts/tir_black'
+Plug 'chriskempson/base16-vim'
 
 Plug 'scrooloose/syntastic'
 
@@ -81,7 +82,11 @@ call plug#end()
 set clipboard=unnamed
 
 try
-  colorscheme tir_black
+  colorscheme base16-default-dark
+  if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+  endif
 catch
 endtry
 
