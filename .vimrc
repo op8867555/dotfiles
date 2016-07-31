@@ -40,6 +40,7 @@ Plug 'godlygeek/tabular'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 
 " Theme
 Plug 'vim-scripts/tir_black'
@@ -56,6 +57,13 @@ Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+
+" Android
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+
+" PHP
+Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
 
 " Pandoc
 Plug 'vim-pandoc/vim-pandoc'
@@ -357,6 +365,11 @@ let g:airline_right_sep=''
 " Pandoc {{{
 " add CJK to spell langs
 let g:pandoc#spell#default_langs=['en_us', 'cjk']
+" }}}
+
+" PHP {{{
+autocmd FileType php setlocal ts=4 sts=4 sw=4 ex
+let g:syntastic_php_checkers = ['php']
 " }}}
 
 " Alignment {{{
