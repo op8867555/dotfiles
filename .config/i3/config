@@ -305,6 +305,34 @@ bindsym $mod+m mode "move"
 bindsym $mod+Control+h focus output left
 bindsym $mod+Control+l focus output right
 
+
+# Color Scheme
+
+# copy & paste™ from [Arc-Dark] theme
+# [Arc-Dark]: https://github.com/horst3180/arc-theme
+set $ad_base_color             #404552
+set $ad_text_color             #D3DAE3
+set $ad_bg_color               #383C4A
+set $ad_fg_color               #D3DAE3
+set $ad_tooltip_bg_color       #4B5162
+set $ad_tooltip_fg_color       #FFFFFF
+set $ad_selected_bg_color      #5294E2
+set $ad_selected_fg_color      #FFFFFF
+set $ad_insensitive_bg_color   #3E4350
+set $ad_insensitive_fg_color   #7C818C
+set $ad_notebook_bg            #404552
+set $ad_dark_sidebar_bg        #353945
+set $ad_link_color             #5294E2
+set $ad_menu_bg                #383C4A
+set $ad_btn_close_color        #CC575D
+
+# class border background text indicator
+client.focused          $ad_selected_bg_color     $ad_selected_bg_color    $ad_selected_fg_color    $ad_btn_close_color
+client.unfocused        $ad_insensitive_bg_color  $ad_insensitive_bg_color $ad_insensitive_fg_color $ad_btn_close_color
+client.focused_inactive $ad_bg_color              $ad_bg_color             $ad_fg_color             $ad_btn_close_color
+client.urgent           $ad_insensitive_fg_color  $ad_insensitive_bg_color $ad_insensitive_fg_color $ad_btn_close_color
+client.background       $ad_bg_color              $ad_bg_color             $ad_text_color           $ad_btn_close_color
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -312,6 +340,17 @@ bar {
         status_command SCRIPT_DIR=~/bin/i3blocks/ i3blocks
         tray_output primary
         strip_workspace_numbers yes
+        colors {
+          background         $ad_insensitive_bg_color
+          statusline         $ad_text_color
+          separator          $ad_insensitive_fg_color
+          focused_background $ad_bg_color
+          focused_statusline $ad_fg_color
+          focused_workspace  $ad_selected_bg_color    $ad_selected_bg_color    $ad_selected_fg_color
+          active_workspace   $ad_bg_color             $ad_bg_color             $ad_fg_color
+          inactive_workspace $ad_insensitive_bg_color $ad_insensitive_bg_color $ad_insensitive_fg_color
+          urgent_workspace   $ad_btn_close_color      $ad_btn_close_color      #FFFFFF
+        }
 }
 
 
