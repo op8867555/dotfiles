@@ -97,6 +97,7 @@ interval=19
 
 [bandwidth]
 #instance=eth0
+command=/usr/lib/i3blocks/bandwidth -o  -i 
 interval=7
 
 
