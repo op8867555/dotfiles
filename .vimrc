@@ -17,6 +17,9 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/neocomplete.vim'
 Plug 'jgdavey/tslime.vim'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 Plug 'congma/vim-fakeclip'
 
 Plug 'editorconfig/editorconfig-vim'
@@ -55,12 +58,16 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
+Plug 'alx741/vim-hindent', {'for': 'haskell'}
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 " Android
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+
+" Javascript
+Plug 'pangloss/vim-javascript', { 'for': 'Javascript'}
 
 " PHP
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
@@ -250,7 +257,7 @@ inoremap <expr> <C-u> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 autocmd FileType python setlocal ts=4 sts=4 sw=4 ex
 "let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#completions_command = "<C-N>"
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'python']
 " }}}
 
 " Ruby {{{
@@ -271,6 +278,8 @@ autocmd FileType haskell setlocal ts=4 sts=4 sw=4 ex
 autocmd FileType haskell map <F5> :GhcModType<CR>
 autocmd FileType haskell map <F6> :GhcModTypeClear<CR>
 autocmd FileType haskell map <F7> :GhcModCheck<CR>
+
+autocmd FileType haskell setlocal formatprg=hindent
 
 
 " Turn off *Pretty unicode haskell symbols*
@@ -370,6 +379,7 @@ let g:airline_right_sep=''
 " Pandoc {{{
 " add CJK to spell langs
 let g:pandoc#spell#default_langs=['en_us', 'cjk']
+map <F7> :make<CR>
 " }}}
 
 " PHP {{{
