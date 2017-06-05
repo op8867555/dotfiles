@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Source Code Pro, Awesome 10
+font pango:Source Code Pro, FontAwesome, Awesome 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -97,6 +97,7 @@ bindsym $mod+Shift+d exec rofi -no-kb-row-select -show run
 bindsym $mod+Shift+w exec rofi -no-kb-row-select -show window
 bindsym $mod+Shift+t exec i3-input -F 'title_format %s' -P 'New Title: '
 bindsym $mod+Control+d exec rofi -no-kb-row-select -show drun
+bindsym $mod+F9 exec ~/bin/rofi-netctl/rofi-netctl.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -178,8 +179,8 @@ bindsym $mod+8 $ws8
 bindsym $mod+9 $ws9
 bindsym $mod+0 $ws10
 
-bindsym $mod+comma workspace prev
-bindsym $mod+period workspace next
+bindsym $mod+comma workspace prev_on_output
+bindsym $mod+period workspace next_on_output
 
 bindsym $mod+Escape workspace back_and_forth
 bindsym $mod+Shift+Escape move container to workspace back_and_forth
@@ -217,24 +218,16 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-for_window [title="Messenger.*- Chromium"] move window to $ws4
-for_window [title=".* - Gitter - Chromium"] move window to $ws4
-for_window [title=".*Google Hangouts.* - Chromium"] move window to $ws4
-for_window [title=".*Skype.* - Chromium"] move window to $ws4
-for_window [title=".*Habitica.* - Chromium"] move window to $ws4
-for_window [title=".*Inbox.* - Chromium"] move window to $ws4
-# for_window [title=".*| freenode - Chromium"] move window to $ws4
-for_window [title="^LINE$"] move window to $ws4
+assign [title="Messenger.*- Chromium"] $ws4
+assign [title=".* - Gitter - Chromium"] $ws4
+assign [title=".*Google Hangouts.* - Chromium"] $ws4
+assign [title=".*Skype.* - Chromium"] $ws4
+assign [title=".*Habitica.* - Chromium"] $ws4
+assign [title=".*Inbox.* - Chromium"] $ws4
+assign [title="^LINE$"] $ws4
+assign [instance="^crx_knipolnnllmklapflnccelgolnpehhpl$"] $ws4
 
-# assign [title="Messenger.*- Chromium"] 4
-# assign [title=".* - Gitter - Chromium"] 4
-# assign [title=".*Google Hangouts.* - Chromium"] 4
-# assign [title=".*Skype.* - Chromium"] 4
-# assign [title=".*Habitica.* - Chromium"] 4
-# assign [title=".*Inbox.* - Chromium"] 4
-# assign [title="^LINE$"] 4
-
-for_window [instance="^crx_knipolnnllmklapflnccelgolnpehhpl$"] move window to $ws4, floating disable
+for_window [instance="^crx_knipolnnllmklapflnccelgolnpehhpl$"] floating disable
 for_window [title="^Tab Organizer \(.+\)$"] floating enable
 for_window [title="歌詞" instance="OSD Lyrics"] floating enable
 
@@ -248,16 +241,14 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+        bindsym Shift+h resize shrink width 10 px or 10 ppt
+        bindsym Shift+j resize grow height 10 px or 10 ppt
+        bindsym Shift+k resize shrink height 10 px or 10 ppt
+        bindsym Shift+l resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
